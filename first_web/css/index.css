@@ -1,0 +1,1195 @@
+    *{
+    padding:0;
+    margin:0;
+}
+    header{
+    display: none;
+    height: 40px;
+    width: 100%;
+    background-color:black;
+    opacity:0.8;
+    position: relative;
+    z-index: 1;
+    }
+    .head1{
+    width: 900px;
+    height: 40px;
+    margin: 0 auto;
+}
+li{
+    list-style: none;
+}
+.head1 li{
+    float: left;
+    
+}
+.head1 li a{
+    text-decoration: none;
+    display: block;
+    font-family: "Microsoft JhengHei";
+    line-height: 40px;
+    padding: 0 40px;
+    color: #fff;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+.xiala1{
+    display: none;
+    position: relative;
+}
+.xiala1 a{
+    background-color: black;
+    opacity: 0.8;
+    font-family: "Microsoft JhengHei";
+}
+.head1 li:hover>a{
+    opacity: 0.9;
+}
+.xiala1 a:hover{
+    opacity: 1;
+}
+header h2{
+    float: left;
+    line-height: 40px;
+    color: white;
+    opacity: 0.8;
+}
+@media screen and (max-width: 1200px){
+    header h2{
+        display: none;
+    }
+}
+.daiti{
+    height: 40px;
+    background:Thistle;
+    opacity: 0.5
+}
+.stage1{
+    height: 700px;
+    background:Thistle;
+    opacity: 0.7;
+    perspective: 600px;
+    transition: background 2s linear;
+}
+.ronqi{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    top: 250px;
+    margin-left: 45%;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg);
+    animation: slide_box1 5s linear;
+}
+@keyframes mybox {
+    0%{transform: rotateX(-15deg)rotateY(0deg)rotateZ(0deg)}
+    25%{transform: rotateX(90deg)rotateY(45deg)}
+    50%{transform: rotateX(180deg)rotateY(90deg)rotateZ(45deg)}
+    75%{transform: rotateZ(90deg)rotateY(135deg)}
+    100%{transform: rotateX(170deg)rotateY(180deg)rotateX(45deg) }
+}
+.ronqi div{
+    position: absolute;
+    line-height: 200px;
+    text-align: center;
+    font-family: "Microsoft JhengHei";
+    font-size: 50px;
+    transition: transform 0.3s linear;
+}
+@keyframes slide_box1{
+    0%{margin-left: 10%;}
+    20%{margin-left: 10%;}
+    100%{margin-left: 45%;}
+}
+.ronqi2{
+	
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 300px;
+    margin-left: 48%;
+    transform-style: preserve-3d;
+    transform: rotateX(-15deg);
+    animation: slide_box2 5s linear;
+}
+@keyframes slide_box_r {
+    0%{transform: rotateY(90deg)translateZ(100px)translateX(200px);}
+    20%{transform: rotateY(90deg)translateZ(100px)translateX(200px);}
+    100%{transform: rotateY(90deg)translateZ(100px)translateX(0px);}
+}
+@keyframes slide_box2 {
+    0%{margin-left:14%}
+    20%{margin-left:14%}
+    100%{margin-left: 48%}
+}
+@keyframes mybox2 {
+0%{transform: rotateX(-15deg)rotateY(0deg)rotateZ(0deg)}
+25%{transform: rotateX(90deg)rotateY(45deg)}
+50%{transform: rotateX(180deg)rotateY(90deg)rotateZ(45deg)}
+75%{transform: rotateZ(90deg)rotateY(135deg)}
+100%{transform: rotateX(170deg)rotateY(180deg)rotateX(45deg) }
+}
+.ronqi2 span{
+    position: absolute;
+    line-height: 100px;
+    text-align: center;
+    font-family: "Microsoft JhengHei";
+    font-size: 30px;
+}
+
+div.box_f{
+    background:white;
+    opacity: 0.5;
+    width: 200px;
+    height: 200px;
+    transform: rotateY(0deg) translateZ(100px);
+}
+div.box_b{
+    background:white;
+    width:200px;
+    height: 200px;
+    opacity: 0.5;
+    transform: rotateY(180deg) translateZ(100px);
+}
+div.box_l{
+    background:white;
+    width: 200px;
+    height: 200px;
+    opacity: 0.5;
+    transform: rotateY(-90deg)translateZ(100px);
+}
+div.box_r{
+    background:white;
+    width: 200px;
+    height: 200px;
+    opacity: 0.5;
+    transform: rotateY(90deg)translateZ(100px)translateX(0px);
+    animation: slide_box_r 5s linear;
+}
+
+div.box_t{
+    background:white;
+    width: 200px;
+    height: 200px;
+    opacity: 0.5;
+    transform: rotateX(90deg)translateZ(100px)translateX(0px);
+    animation: slide_box_t 5s linear;
+}
+@keyframes slide_box_t  {
+    0%{ transform: rotateX(90deg)translateZ(-100px)translateX(200px);}
+    20%{transform: rotateX(90deg)translateZ(-100px)translateX(200px);}
+    100%{ transform: rotateX(90deg)translateZ(100px)translateX(0px);}
+}
+div.box_bo{
+    background:white;
+    width: 200px;
+    height: 200px;
+    opacity: 0.3;
+    transform: rotateX(-90deg)translateZ(100px);
+}
+
+span.box_f1{
+    background: -webkit-linear-gradient(top,#69d2e8,white);
+    background: -moz-linear-gradient(top,#69d2e8,white);
+    width: 100px;
+    height: 100px;
+    opacity: 0.3;
+    transform: rotateY(0deg) translateZ(50px);
+}
+span.box_b2{
+    background: -webkit-linear-gradient(top,#69d2e8,white);
+    background: -moz-linear-gradient(top,#69d2e8,white);
+    width: 100px;
+    height: 100px;
+    opacity: 0.3;
+    transform: rotateY(180deg) translateZ(50px);
+}
+span.box_l3{
+    background: -webkit-linear-gradient(top,#69d2e8,white);
+    background: -moz-linear-gradient(top,#69d2e8,white);
+    width: 100px;
+    opacity: 0.3;
+    height: 100px;
+    transform: rotateY(-90deg)translateZ(50px);
+}
+span.box_r4{
+    background: -webkit-linear-gradient(top,#69d2e8,white);
+    background: -moz-linear-gradient(top,#69d2e8,white);
+    width: 100px;
+    height: 100px;
+    opacity: 0.3;
+    transform: rotateY(90deg)translateZ(50px);
+}
+span.box_t5{
+    background: -webkit-linear-gradient(top,#69d2e8,white);
+    background: -moz-linear-gradient(top,#69d2e8,white);
+    opacity: 0.3;
+    width: 100px;
+    height: 100px;
+    transform: rotateX(90deg)translateZ(50px);
+}
+span.box_bo6{
+    background: -webkit-linear-gradient(top,#69d2e8,white);
+    background: -moz-linear-gradient(top,#69d2e8,white);
+    opacity: 0.3;
+    width: 100px;
+    height:100px;
+    transform: rotateX(-90deg)translateZ(50px);
+}
+
+._line{
+    width: 282px;
+    height:282px;
+    position: relative;
+    top:0px;
+    margin-left: 42%;
+    transform-style: preserve-3d;
+    transform: rotateY(0deg)rotateZ(0deg)rotateX(0deg);
+    animation: myline 5s linear;
+    -ms-animation: myline 5s linear;
+
+}
+@keyframes myline {
+    0%{margin-left: 75%;}
+    20%{margin-left:75% }
+    100%{marigin-left:42%}
+}
+@keyframes myline1 {
+    0%{ transform: rotateY(0deg)rotateZ(0deg)rotateX(0deg);}
+    100%{ transform: rotateY(180deg)rotateZ(180deg)rotateX(180deg);}
+}
+@keyframes mybox2 {
+    0%{transform: rotateX(45deg)rotateY(180deg)rotateX(170deg)}
+    25%{transform: rotateX(90deg)rotateY(45deg)}
+    50%{transform: rotateX(180deg)rotateY(90deg)rotateZ(45deg)}
+    75%{transform: rotateZ(90deg)rotateY(135deg)}
+    100%{transform: rotateX(170deg)rotateY(180deg)rotateX(45deg) }
+}
+._line>div{
+    position: absolute;
+}
+div.box_fl{
+    width: 282px;
+    height: 282px;
+    opacity: 0.5;
+    transform: rotateY(0deg) translateZ(141px);
+    background: -webkit-linear-gradient(left, rgba(18, 143, 243, 0.51),rgba(168, 168, 168, 0.5));
+    background: -moz-linear-gradient(left, rgba(74, 161, 255, 0.58), rgba(168, 168, 168, 0.5));
+    transition: background 2s linear;
+}
+div.box_bl{
+
+    width:282px;
+    height: 282px;
+    opacity: 0.5;
+    transform: rotateY(180deg) translateZ(141px);
+    background: -webkit-linear-gradient(left, rgba(18, 143, 243, 0.51),rgba(168, 168, 168, 0.5));
+    background: -moz-linear-gradient(left, rgba(74, 161, 255, 0.58), rgba(168, 168, 168, 0.5));
+    transition: 2s;
+}
+div.box_ll{
+
+    width: 282px;
+    height: 282px;
+    opacity: 0.5;
+    transform: rotateY(-90deg)translateZ(141px);
+    background: -webkit-linear-gradient(left, rgba(18, 143, 243, 0.51),rgba(168, 168, 168, 0.5));
+    background: -moz-linear-gradient(left, rgba(74, 161, 255, 0.58), rgba(168, 168, 168, 0.5));
+    transition: background 2s linear;
+}
+div.box_rl{
+
+    width: 282px;
+    height: 282px;
+    opacity: 0.5;
+    transform: rotateY(90deg)translateZ(141px);
+    animation: slide_box_r 5s linear;
+    background: -webkit-linear-gradient(left, rgba(18, 143, 243, 0.51),rgba(168, 168, 168, 0.5));
+    background: -moz-linear-gradient(left, rgba(74, 161, 255, 0.58), rgba(168, 168, 168, 0.5));
+    transition: background 2s linear;
+}
+div.box_tl{
+
+    width: 282px;
+    height: 282px;
+    opacity: 0.5;
+    /*transform: rotateX(90deg)translateZ(-100px)translateX(200px);*/
+    transform: rotateX(90deg)translateZ(141px);
+    background: -webkit-linear-gradient(left, rgba(18, 143, 243, 0.51),rgba(168, 168, 168, 0.5));
+    background: -moz-linear-gradient(left, rgba(74, 161, 255, 0.58), rgba(168, 168, 168, 0.5));
+    transition: background 2s linear;
+}
+div.box_bol{
+
+    width: 282px;
+    height: 282px;
+    opacity: 0.5;
+    transform: rotateX(-90deg)translateZ(141px);
+    background: -webkit-linear-gradient(left, rgba(18, 143, 243, 0.51),rgba(168, 168, 168, 0.5));
+    background: -moz-linear-gradient(left, rgba(74, 161, 255, 0.58), rgba(168, 168, 168, 0.5));
+    transition:  background 2s linear;
+}
+.line_1{
+    position: absolute;
+    top: 0;
+    left:0;
+}
+.line_2{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.line_3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
+.line_1{
+    margin-right: 0;
+    margin-bottom: 0;
+}
+.line_one{
+    width:5px;
+    height: 5px;
+    border-radius: 5px;
+    background:#69d2e8;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right:0;
+    margin: auto;
+}
+._line_small{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:0;
+    left:0;
+    bottom: 0;
+    right:0;
+    margin: auto;
+    transform-style: preserve-3d;
+}
+._line_small>div{
+    position: absolute;
+}
+.boxl_f{
+
+    transition: background 5s;
+    opacity: 0.8;
+    width:200px;
+    height: 200px;
+    transform: rotateY(0deg) translateZ(100px);
+}
+
+.boxl_b{
+
+    opacity: 0.8;
+    width:200px;
+    height: 200px;
+    transform: rotateY(180deg) translateZ(100px);
+}
+.boxl_l{
+
+    opacity: 0.8;
+    width:200px;
+    height: 200px;
+    transform: rotateY(-90deg)translateZ(50px);
+}
+.boxl_r{
+
+    opacity: 0.8;
+    width:200px;
+    height: 200px;
+    transform: rotateY(90deg)translateZ(100px);
+}
+.boxl_t{
+
+    opacity: 0.8;
+    width:200px;
+    height: 200px;
+    transform: rotateX(90deg)translateZ(100px);
+}
+.boxl_bo{
+
+    opacity: 0.8;
+    width:200px;
+    height: 200px;
+    transform: rotateX(-90deg)translateZ(100px);
+}
+.line_horn1{
+    width: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.line_horn2{
+    width: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: white;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.line_horn3{
+    width: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.line_horn4{
+    width: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+.html{
+
+    height:800px;
+    background:#FFFAF0;
+    position: relative;
+}
+.w_html{
+    width: 35vw;
+    height: 600px;
+    position:absolute;
+    top: 100px;
+    left: 5vw;
+    overflow: hidden;
+}
+.w_html h1{
+    text-align: center;
+    font-family: Arial;
+  font-size: 40px;
+    padding: 5px 0;
+    color: rgba(0,0,0,0.8);
+    position: relative;
+    top: 550px;
+    transition: 2s;
+}
+.w_html h1.onscroll{
+        top: 0;
+}
+.w_html h2{
+    font-size: 42px;
+    text-align: center;
+    color: rgba(0,0,0,0.8);
+    position: relative;
+    top: 600px;
+    transition: 2.1s;
+}
+.w_html h2.onscroll{
+    top: 0;
+}
+.w_html h3{
+    margin-top: 30px;
+    text-align: center;
+    font-family: "Segoe UI Light";
+    color: rgba(0,0,0,0.8);
+    position: relative;
+    top: 600px;
+    transition: 2.2s;
+}
+.w_html h3.onscroll{
+    top: 0;
+}
+.w_html p{
+    font-family: "Microsoft JhengHei";
+    padding: 8px 50px;
+    color: rgba(0,0,0,0.9);
+    position: relative;
+    font-weight: 600;
+    top: 600px;
+    transition: 1.8s 0.5s;
+}
+.w_html p.onscroll{
+    top: 0;
+}
+
+.w_html a:hover{
+    color: black;
+    opacity: 0.7;
+}
+	.btn_ht{
+    position: relative;
+    display: block;
+    width: 150px;
+    height: 60px;
+    text-transform: uppercase;
+    border: 1px solid currentColor;
+    transition: 0.7s;
+    line-height: 60px;
+	text-align: center;
+    font-family: "Microsoft JhengHei Light";
+    font-size: 18px;
+    font-weight: 600;
+    color: #5f4f56;
+    text-decoration: none;
+    top: 80px;
+    left: 17vw;
+	overflow: hidden;
+   
+	}
+    
+	.btn_ht::after{
+   content: '';
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 0 0;
+    border-color: #6b4432 transparent transparent transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.7s;
+    z-index: -1;
+	}
+	.btn_ht:active{
+		background: #b27254;
+	}
+	.btn_ht:hover{
+		    color: #ecdcd4;
+	}
+	.btn_ht:hover::after{
+    border-width: 330px 330px 330px 0;
+    transition: 0.7s;
+	}
+    @media screen and (max-width: 1600px){
+        .html .w_html h3{
+            display: none;
+        }
+    }
+    @media screen and (max-width:890px){
+        .html .w_html .btn_ht{
+            display: none;
+        }
+    }
+    .tot{
+    width: 40vw;
+    height:500px;
+    background:transparent;
+    position: relative;
+    perspective: 500px;
+    top: 120px;
+    left:50vw;
+}
+.tot_text{
+    width:35vw;
+    height:200px;
+    position: absolute;
+    top: 140px;
+    left: 2vw;
+    -weblit--transform-style: preserve-3d;
+    transform:translateZ(100px);
+    transition: 0.3s;
+}
+.tot_text span{
+    font-family: "Microsoft JhengHei Light";
+    font-size: 8vw;
+    font-weight: 800;
+    color: rgba(220, 220, 220, 0.9);
+    text-shadow: 0 4px 10px rgba(31, 31, 31, 0.91);
+    line-height: 200px;
+    padding: 8vw;
+}
+.css{
+    height: 1450px;
+    background: -webkit-linear-gradient(top,#FAF6FA 60%,whitesmoke);
+    background: -moz-linear-gradient(top,#FAF6FA 60%,whitesmoke);
+    position: relative;
+}
+.css_text{
+    width: 30vw;
+    height: 800px;
+
+    position: absolute;
+    top: 100px;
+    left: 8%;
+    overflow: hidden;
+}
+.css_biaoti{
+    font-family: "Microsoft JhengHei";
+    font-size: 20px;
+    text-align: center;
+    color: rgba(0,0,0,0.8);
+    padding: 15px 0;
+}
+.css_text h2{
+    color: rgba(0,0,0,0.9);
+    text-align: center;
+    font-family: "Microsoft JhengHei Light";
+    padding-top: 0px;
+    padding-bottom:20px ;
+    display: none;
+}
+.css_text p>span{
+    font-family: "Microsoft JhengHei";
+    font-size: 16px;
+}
+.css_text h4 {
+    font-family: "Microsoft JhengHei Light";
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 10px 1.5vw;
+    padding-top: 0;
+    position: relative;
+    display: none;
+}
+.css_text h3 {
+    font-family: "Microsoft JhengHei Light";
+    font-size: 18px;
+    color: rgba(0, 0, 0, 0.8);
+    padding: 10px 1.5vw;
+    padding-top: 0;
+    position: relative;
+    display: none;
+}
+@media screen and (max-width: 1200px){
+    .css_text h3{
+        display: none;
+    }
+}
+    .css_bor{
+    display: block;
+    width: 150px;
+    height: 60px;
+    border: 1px solid #6a1a13;
+    opacity: 0.8;
+    position: absolute;
+    overflow: hidden;
+    top: 550px;
+    left: 16vw;
+    line-height: 60px;
+    font-family: "Microsoft YaHei UI Light";
+    text-decoration: none;
+    color: #bc4b41;
+    transition: 0.4s;
+    opacity: 0.8;
+    font-size: 19px;
+    font-weight: 600;
+    text-align: center;
+    }
+    .css_bor::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    transform: rotate(90deg);
+    border-style: solid;
+    border-width: 0 0 0 0;
+    transition: 0.6s;
+    z-index: -1;
+    border-color: transparent transparent transparent #6a1a13;
+    }
+    .css_bor::before{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    transform: rotate(360deg);
+    border-style: solid;
+    border-width: 0 0 0 0;
+    transition: 0.6s;
+    z-index: -1;
+    border-color: transparent transparent #6a1a13 transparent;
+    right: 0;
+    bottom: 0;
+    }
+    .css_bor:hover{
+        color: #ecdcd4;
+    }
+    .css_bor:hover::after{
+        border-width: 150px 0 0 150px;
+    }
+    .css_bor:hover::before{
+        border-width: 0 0 150px 150px;
+    }
+.container{
+    width: 700px;
+    height: 500px;
+    position: absolute;
+    top: 850px;
+    left: 3vw;
+    overflow: hidden;
+}
+    .plane_o{
+        width: 50px;
+        height: 52px;
+        background-image: url("../img/corel.png");
+        background-repeat: no-repeat;
+        position: absolute;
+        top: 40px;
+        left: -50px;
+        animation: 50s myplane_o linear infinite normal;
+    }
+    @keyframes myplane_o {
+        0%{left: -50px;}
+        100%{left: 850px;}
+    }
+    .plane_t{
+        width: 50px;
+        height: 52px;
+        position: absolute;
+        top: 100px;
+        left: -50px;
+        background-image: url("../img/corel.png");
+        background-repeat: no-repeat;
+        animation: 20s myplane_t ease-in-out infinite normal;
+    }
+    @keyframes myplane_t {
+        0%{left: -50px;}
+        100%{left: 850px;}
+    }
+    .indicate{
+        width: 70px;
+        height: 50px;
+        border: 1px solid #78777b;
+        position: absolute;
+        border-radius: 15px;
+        box-shadow: 3px 3px 10px gray;
+        background-color: #9b9b9b;
+        transform: rotate(6deg);
+        right:-10%;
+        bottom: 40%;
+        animation: 30s mypillar linear infinite normal;
+    }
+    @keyframes mypillar {
+        0%{right: -30%;}
+        100%{right: 130%;}
+    }
+    .indicate h3{
+        color: rgba(230, 230, 230, 0.76);
+        text-shadow: 2px 2px 5px gray;
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 50px;
+        font-family: "Microsoft JhengHei";
+        text-align: center;
+    }
+    .pillar{
+        height: 100px;
+        width: 20px;
+        background-color: #9b9b9b;
+        position: absolute;
+        top: 45px;
+        left: 25px;
+        border-radius: 5px;
+    }
+.container div,.container span{
+	position: absolute;
+}
+.item{
+	width: 200px;
+    height: 200px;
+    bottom: 70px;
+}
+.item .torso {
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    left: 50%;
+    margin-left: -50px;
+    box-shadow: inset 10px -6px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+    animation: bounce 0.6s ease-in-out infinite;
+}
+.item .torso span{
+	width: 4px;
+    height: 4px;
+    background-color: #1f1f1f;
+    border-radius: 2px;
+}
+    .item .torso .eye_left{
+        top: 30px;
+        left: 20px;
+        width: 30px;
+        height: 29px;
+        background-color: #fff;
+        border-radius: 50%;
+        border-top: 2px solid #111;
+        transform:rotate(-10deg) ;
+    }
+    .item .torso .eye_right{
+        top: 30px;
+        right: 20px;
+        width: 30px;
+        height: 29px;
+        background-color: #fff;
+        border-radius: 50%;
+        border-top: 2px solid #111;
+        transform:rotate(10deg) ;
+    }
+.item .torso .eye_left span {
+    top: 14px;
+    left: 15px;
+}
+    .item .torso .eye_right span{
+        top: 14px;
+        left: 7px;
+    }
+    .item .torso .arm_left{
+        left: -14px;
+        width: 15px;
+        height: 16px;
+        bottom: 28px;
+        border-radius: 7px;
+        background-color:#30c0ff ;
+        animation: arm-bounce 0.7s ease-in infinite;
+    }
+.item .torso .arm_right {
+    right: -14px;
+    width: 15px;
+    height: 16px;
+    bottom: 28px;
+    border-radius: 7px;
+    background-color:#30c0ff ;
+    animation: arm-bounce 0.7s ease-in infinite;
+}
+.item .shadow{
+    width: 70px;
+    height: 10px;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+   border-radius: 50%;
+   background: rgba(169, 169, 169, 0.65);
+   box-shadow: 0 0 5px rgba(169, 169, 169, 0.65);
+   animation: shadow 0.7s ease-in-out infinite;
+   animation-delay: 0.3s;
+}
+.item#blue .mounth {
+    left: 37px;
+    width: 20px;
+    height: 5px;
+    bottom: 17px;
+    transform: rotate(5deg);
+    background-color: #ffffff;
+    border-radius: 50% 50% 100% 100%;
+    animation: mounth 0.7s ease-in-out infinite;
+}
+    .item#pink .mounth {
+        left: 40px;
+        width: 20px;
+        height: 5px;
+        bottom: 17px;
+        transform: rotate(5deg);
+        background-color: #ffffff;
+        border-radius: 50% 50% 100% 100%;
+        animation: mounth 0.7s ease-in-out infinite;
+    }
+    .item#red .mounth {
+        left: 38px;
+        width: 20px;
+        height: 5px;
+        bottom: 17px;
+        transform: rotate(5deg);
+        background-color: #ffffff;
+        border-radius: 50% 50% 100% 100%;
+        animation: mounth 0.7s ease-in-out infinite;
+    }
+    .item#blue .torso{
+        background-color: #30c0ff;
+    }
+.item#blue {
+    transform: scale(1.4);
+}
+
+@keyframes bounce {
+    0% {
+        bottom: 0;
+    }
+    65% {
+        bottom: 8px;
+    }
+    100% {
+        bottom: 0;
+        border-radius: 49% 47% 42% 40%/60% 60% 40% 40%;
+    }
+}
+@keyframes arm-bounce {
+    0%, 100% {
+        bottom: 28px;
+    }
+    33% {
+        bottom: 23px;
+    }
+    40% {
+        transform: scale(0.8);
+    }
+    66% {
+        transform: scale(1);
+    }
+}
+@keyframes shadow {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(0.9);
+    }
+}
+@keyframes mounth {
+    0%, 100% {
+        height: 4px;
+        border-radius: 50% 50% 100% 100%;
+    }
+    50% {
+        height: 8px;
+        border-radius: 30% 30% 100% 100%;
+    }
+}
+    .item#pink{
+        transform: scale(1.0);
+    }
+    .item#pink .torso,.item#pink .arm_left,.item#pink .arm_right{
+        background-color: rgba(255, 150, 207, 0.79);
+    }
+    #blue{
+        right: 30%;
+    }
+    #pink{
+        right: 50%;
+    }
+    .item#red .torso,.item#red .arm_left,.item#red .arm_right {
+        background-color: rgba(255, 85, 131, 0.99);
+    }
+    #red{
+        right: 70%;
+    }
+    .item#red{
+        transform: scale(1.3);
+    }
+.css3{
+    width: 30vw;
+    height: 800px;
+    position: absolute;
+    top: 500px;
+    right: 8%;
+    overflow: hidden;
+}
+.yang{
+    color: white;
+    text-shadow: -10px 2px 2px rgba(55, 55, 55, 0.86);
+    font-family: "Microsoft JhengHei";
+    font-size: 0vw;
+    position: absolute;
+    top:16vw;
+    right: 15vw;
+    transition: 3s;
+
+}
+.css .text_p{
+    width: 20vw;
+    height: 300px;
+    position: relative;
+    left:5vw;
+    top:5px;
+}
+.css .text_p p{
+    font-family: "Microsoft JhengHei Light";
+    font-size: 17px;
+    font-weight: bold;
+    color: rgba(0,0,0,0.7);
+
+
+}
+.css3 h3{
+    font-family: "Microsoft YaHei UI Light";
+    text-align: center;
+    padding: 8px 20px;
+    font-size: 16px;
+    text-align: left;
+    position: relative;
+    left: -550px;
+    transition: 3s;
+}
+.css3 h2{
+    font-family: "Microsoft JhengHei Light";
+    font-size: 22px;
+    text-align: center;
+    text-shadow: -0.2px 0.2px 0.8px black;
+    color: black;
+    opacity: 0.7;
+    display: none;
+}
+.css3 .dis{
+    display: none;
+}
+    .btn_css3{
+        display: block;
+        text-decoration: none;
+        width: 120px;
+        height: 60px;
+        border-radius: 15px;
+        background-color:rgba(189, 186, 197, 0.71);
+        position: relative;
+        overflow: hidden; 
+        top: 80px;
+        left: 15vw;
+        font-family: "微软雅黑 Light";
+         line-height: 60px;
+        color: #ff5e00;
+        font-weight: 600;
+        transition: 0.5s;
+        text-align: center;
+        z-index: 1;
+    }
+    #cov{
+    width: 18px;
+    height: 18px;
+    border-radius: 15px;
+    background: rgba(245, 47, 122, 0.67);
+    opacity: 0.7;
+    position: absolute;
+    transition: 0.4s;
+    left: 150px;
+    top: 60px;
+    }
+    .btn_css3:hover #cov{
+    left: 0px;
+    top: 0px;
+    }
+    #cov.slide_btn{
+     width: 120px;
+    height: 60px;
+    }
+.jQuery{
+    height: 800px;
+    background: rgba(141, 175, 184, 0.32);
+    position: relative;
+    overflow: hidden;
+}
+.jQuery img{
+    position: relative;
+    top: 20px;
+    left: 10px;
+}
+.jQuery h3{
+    font-family: "Microsoft YaHei UI Light";
+    padding: 5px 10px;
+    color: rgba(0,0,0,0.7);
+}
+.jQuery h4{
+    font-family: "Microsoft YaHei UI Light";
+    padding-top:20px ;
+    color: rgba(0,0,0,0.6);
+    display: none;
+}
+.jQuery_text{
+    width: 20vw;
+    height: 500px;
+    position: relative;
+    left: 5vw;
+    top:40px;
+
+}
+.btn_jq{
+    top: 120px;
+    left:8vw;
+    position: relative;
+    width: 200px;
+    height: 70px;
+    overflow: hidden;
+    background-color: #dad1e3;
+    border-radius: 30% 30% 30% 30%/40% 40% 40% 40%;
+    transition: 0.5s;
+}
+.btn_jq:hover{
+    border-radius: 50% 50% 50% 50%/50% 50% 50% 50%;
+}
+.btn_jq:hover .jq_1{
+    transform: scale(1);
+    border-radius: 50% 50% 50% 50%/50% 50% 50% 50%;
+}
+.btn_jq:hover a{
+    color: #ffe6fd;
+}
+.btn_jq .jq_1{
+    position: absolute;
+    width:200px;
+    height:70px;
+    transform: scale(0.001);
+    transition: 0.5s;
+    background-color: rgba(255, 138, 210, 0.66);
+    border-radius:0 0 0 0;
+}
+.btn_jq a{
+    display: block;
+    line-height: 70px;
+    padding-left: 22px;
+    font-family: "Microsoft YaHei UI Light";
+    text-decoration: none;
+    font-size: 19px;
+    font-weight: 600;
+    color: #c0177a;
+    opacity: 0.8;
+    transition: 0.5s;
+}
+#jiantou{
+    width: 35px;
+    height: 35px;
+    background: rgba(27, 27, 27, 0.52);
+    opacity: 0.9;
+    cursor: pointer;
+    position: fixed;
+    bottom:50px ;
+    right: 30px;
+}
+#jiantou::before{
+    content: '';
+    display: block;
+    border-left: 2px dotted white;
+    border-top:2px dotted white;
+    width: 17px;
+    height:17px;
+    transform: rotate(45deg);
+    position: relative;
+    top: 13px;
+    margin: auto;
+}
+#jiantou #jit{
+    font-family: "Microsoft JhengHei Light";
+    color: white;
+    text-align: center;
+    background: rgba(255, 53, 34, 0.95);
+    width: 35px;
+    height: 35px;
+    font-size: 15px;
+    line-height: 35px;
+    position: relative;
+    top: -19px;
+    left: -35px;
+    display: none;
+}
+#jiantou:hover{
+    background: rgba(255, 53, 34, 0.95);
+}
+footer{
+    width: 100%;
+    height: 15px;
+    background-color:rgba(141, 175, 184, 0.32);
+    position: relative;
+}
+footer h4{
+    position: absolute;
+    left: 46%;
+    line-height: 15px;
+    font-family:"Microsoft JhengHei Light";
+}

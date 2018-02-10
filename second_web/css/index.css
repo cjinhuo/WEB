@@ -1,0 +1,325 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+header{
+    width: 100%;
+    height: 90px;
+    background-color: #121212;
+    position: relative;
+}
+header h1{
+    float: left;
+    line-height: 90px;
+    color: white;
+    opacity: 0.8;
+}
+@media screen and (max-width: 1400px){
+    header h1{
+        display: none;
+    }
+}
+header ul{
+    width:1000px;
+    height: 90px;
+    margin: 0 auto;
+}
+header ul li{
+    padding: 0 40px;
+    list-style: none;
+    float: left;
+    line-height:90px;
+    color: #f6f6fa;
+    font-family: "Microsoft JhengHei Light";
+    font-size: 21px;
+}
+header ul li a{
+    display: block;
+    color: #ebebef;
+    text-decoration: none;
+}
+#sec_fir .text_
+{
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    top: 250px;
+    left: 250px;
+}
+.text_ h1{
+    color: deepskyblue;
+    font-family: "Microsoft JhengHei UI Light";
+}
+.text_ p{
+    color: rgba(248, 248, 248, 0.94);
+    line-height: 30px;
+}
+#sec_fir{
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+#scroll{
+	width: 100%;
+	height: 600px;
+    position: relative;
+    overflow: hidden;
+}
+#scroll h1{
+	font-family: "Microsoft JhengHei Light";
+	font-size: 30px;
+	margin-left: 46%;
+	padding-top: 30px;
+}
+#head_scroll{
+    width: 780px;
+    height:330px;
+    position: absolute;
+    top: 150px;
+    left: 28vw;
+}
+#head_scroll:hover{
+    cursor: pointer;
+}
+.btn_l{
+    border: none;
+    width: 70px;
+    height: 105px;
+    background-color: rgba(208, 208, 208, 0.8);
+    position: absolute;
+    transition: 0.8s;
+    left: -75px;
+    top: 43%;
+}
+.btn_l::after{
+    content: '';
+    display: block;
+    height: 10px;
+    width: 10px;
+    border:3px solid white;
+    opacity: 0.8;
+    border-color: white white transparent transparent;
+    position: absolute;
+    top: 45px;
+    left: 32px;
+    transform: rotate(-135deg);
+}
+.btn_l:hover{
+    cursor: pointer;
+    width: 76px;
+    background-color: rgba(57, 255, 157, 0.64);
+}
+.btn_r{
+    border: none;
+    width: 70px;
+    height: 105px;
+    background-color: rgba(208, 208, 208, 0.8);
+    position: absolute;
+    transition: 0.8s;
+    top: 43%;
+    right: -75px;
+}
+.btn_r::after{
+    content: '';
+    display: block;
+    height: 10px;
+    width: 10px;
+    border:3px solid white;
+    opacity: 0.8;
+    border-color: white white transparent transparent;
+    position: absolute;
+    top: 45px;
+    left: 32px;
+    transform: rotate(45deg);
+}
+#scroll:hover .btn_l{
+    left: 0;
+}
+#scroll:hover .btn_r{
+    right: 0;
+}
+.btn_r:hover{
+    cursor: pointer;
+    width: 76px;
+    background-color: rgba(103, 255, 157, 0.64);
+}
+#wrapper{
+    width: 780px;
+    height: 330px;
+    position: relative;
+}
+.item{
+    position: absolute;
+    width: 780px;
+    height: 330px;
+    background-color: rgba(61, 169, 169, 0.49);
+    transition: 0.5s cubic-bezier(.25, .46, .33, .98);
+}
+.left{
+
+    transform:perspective(780px) translate3d(-390px,0px,-100px);
+}
+.right{
+
+    transform:perspective(780px) translate3d(390px,0px,-100px);
+}
+.front{
+
+    transform:perspective(780px) translate3d(0px,0px,0px);
+    z-index: 1;
+}
+.back{
+
+    transform:perspective(780px) translate3d(0px,0px,-200px);
+    z-index: -1;
+}
+
+#one{
+    background-image: url("../img/a.jpg");
+}
+#two{
+    background-image: url("../img/b.jpg");
+}
+#three{
+    background-image: url("../img/c.jpg");
+}
+#four{
+    background-image: url("../img/d.jpg");
+}
+#five{
+    background-image: url("../img/e.jpg");
+}
+#rank{
+    height: 750px;
+    background-color: aliceblue;
+    position: relative;
+    background-image: url("../img/timg.jpg");
+}
+#rank h1{
+	font-family: "Microsoft JhengHei Light";
+	font-size: 30px;
+	margin-left: 46%;
+    padding-top: 30px;
+}
+.rank_img{
+	width: 1200px;
+	height: 460px;
+    margin: 50px auto;
+}
+.rank_img .copy{
+    position: absolute;
+    bottom: 5px;
+    left: 46%;
+    color: white;
+    opacity: 0.8;
+}
+    .effect_yasuo{
+        width: 300px;
+        position: relative;
+        float: left;
+    }
+    .up_img{
+        height: 300px;
+        width: 300px;
+        position: relative;
+        overflow: hidden;
+    }
+    .up_img img{
+        transition: 0.4s;
+    }
+    .down_text{
+        height: 160px;
+        width: 300px;
+        background-color: #232323;
+    }
+    .down_text p{
+        font-family: "Leelawadee UI Semilight";
+        color: azure;
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 160px;
+    }
+    #yasuo:hover .down_text{
+        background-color: rgba(226, 124, 64, 0.79);
+        transition: 0.5s;
+    }
+    .triangle{
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        position: absolute;
+        top: 112px;
+        left: 115px;
+       background-color: rgba(255, 255, 255, 0.51);
+        transform: scale(0.0001);
+        transition: 0.6s;
+    }
+    .triangle::after{
+        content: '';
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border: solid rebeccapurple;
+        border-width:  14px 14px 14px 23px;
+        border-color: transparent transparent transparent gray;
+        top: 20px;
+        left: 25px;
+    }
+    .up_img:hover{
+        cursor: pointer;
+
+    }
+    #yasuo .up_img:hover img{
+        transform: scale(1.08);
+        transition: 0.5s;
+    }
+    #yasuo .triangle:hover{
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    .scale_img{
+        transform: scale(1.08);
+    }
+    .radiu_scale{
+        transform: scale(1);
+    }
+#fiona .up_img:hover img{
+    transform: scale(1.08);
+    transition: 0.5s;
+}
+#fiona .triangle:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#fiona:hover .down_text{
+    background-color: rgba(226, 124, 64, 0.79);
+    transition: 0.5s;
+}
+#monkey .up_img:hover img{
+    transform: scale(1.08);
+    transition: 0.5s;
+}
+#monkey .triangle:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#monkey:hover .down_text{
+    background-color: rgba(226, 124, 64, 0.79);
+    transition: 0.5s;
+}
+#ahri .up_img:hover img{
+    transform: scale(1.08);
+    transition: 0.5s;
+}
+#ahri .triangle:hover{
+    background-color: rgba(255, 255, 255, 0.9);
+}
+#ahri:hover .down_text{
+    background-color: rgba(226, 124, 64, 0.79);
+    transition: 0.5s;
+}
+#fiona .down_text{
+    background-color: #332e30;
+}
+#ahri .down_text{
+    background-color: #332e30;
+}
+

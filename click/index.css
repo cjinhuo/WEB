@@ -1,0 +1,40 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+    overflow: hidden;
+    position: relative;
+    margin: 100px auto;
+}
+.effect{
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background-color: #d2d2d2;
+    transition: 1.5s;
+    transform: scale(0.001);
+}
+.on{
+    transform: scale(1);
+}
+#qq{
+    position: absolute;
+    top: 200px;
+    left: 200px;
+    width: 300px;
+    height: 400px;
+    background-color: aquamarine;
+}
+#ww{
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    width: 100px;
+    height: 50px;
+    background-color: blueviolet;
+}
