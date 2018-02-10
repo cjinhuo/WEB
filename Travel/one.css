@@ -1,0 +1,104 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+body {
+	background-color: #f0eceb;
+}
+aside {
+	height: 980px;
+	width: 15%;
+	border: 1px solid black;
+	background-color: #666;
+	position: fixed;
+}
+nav ul li {
+	padding: 10px;
+	background-color: #333;
+	border-bottom: 1px solid #4a474b;
+	transition: .2s;
+}
+nav ul li a {
+	padding-left: 20px;
+	color: #FFF;
+	text-decoration: none;
+}
+nav ul li:hover {
+	background-color: rgba(1, 1, 1, 0);
+}
+.subHidden {
+	display: none;
+}
+li:hover .subHidden {
+	display: block;
+}
+section {
+	width: 74%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-left: 17%;
+	box-shadow: 0 -6px 8px gray;
+}
+section h1 {
+	width: 95%;
+	text-align: center;
+	background: deepskyblue;
+	color: white;
+	font-size: 35px;
+	padding: 5px 0;
+	margin-bottom: 10px;
+}
+.text {
+	width: 95%;
+	height: 440px;
+	position: relative;
+	background: #F7F3F2;
+	margin: 10px 0;
+	border-radius: 10px;
+	box-shadow: 0 0 5px gray;
+}
+section .bg {
+	width: 100%;
+	height: 390px;
+	border-radius: 10px 10px 0 0;
+}
+.head {
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	position: absolute;
+	bottom: 70px;
+	left: 20px;
+}
+section h4 {
+	position: absolute;
+	bottom: 80px;
+	left: 70px;
+}
+.days {
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	background: cornflowerblue;
+	position: absolute;
+	color: white;
+	top: 30px;
+	right: 30px;
+	text-align: center;
+	line-height: 40px;
+}
+.city {
+	padding: 10px 0 0 20px;
+}
+footer {
+	height: 80px;
+	width: 95%;
+	display: flex;
+	justify-content: space-around;
+}
+footer a {
+	text-decoration: none;
+	color: gray;
+	margin-top: 20px;
+}

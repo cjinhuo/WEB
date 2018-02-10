@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		.container{
+			width: 1100px;
+			height: 631px;
+			min-width: 900px;
+			margin: 100px auto;
+			background: url(images/bg.jpg) no-repeat center;
+			position: relative;
+		}
+		h1{
+			position: absolute;
+			top: 70px;
+			left: 100px;
+		}
+		.all_peach{
+			width: 800px;
+			height: 500px;
+			position: absolute;
+			top: 85px;
+			left: 210px;
+		}
+		.peach{
+			background: url(images/peach.png) no-repeat 0 0;
+			position: absolute;
+			width: 90px;
+			height: 100px;
+			display: block;
+			animation-name: shake;
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in-out;
+		}
+		.peach1{
+			background-position: 0 0;
+			top: 158px;
+			left: 108px;
+		}
+	    .peach2 {
+	        background-position: 0 -115px;
+	        top: 97px;
+	        left: 278px;
+	    }
+	    .peach3 {
+	        background-position: 0 -115px;
+	        top: 129px;
+	        left: 488px;
+	    }
+	    .peach4 {
+	        background-position: 0 -115px;
+	        top: 214px;
+	        left: 297px;
+	    }
+	    .peach5 {
+	        background-position: 0 -115px;
+	        top: 314px;
+	        left: 448px;
+	    }
+	    .peach6 {
+	        background-position: 0 -115px;
+	        top: 305px;
+	        left: 613px;
+	    }
+	        .shake1 {
+        animation-duration: 2.5s;
+    }
+    .shake2, .shake3 {
+        animation-duration: 3.5s;
+    }
+    .shake4, .shake5, .shake6{
+        animation-duration: 4s;
+    }
+    @keyframes shake{
+    	0%{
+    		transform: rotate(0deg);
+    		transform-origin: 50% 0;
+    	}
+    	50%{
+    		transform: rotate(10deg);
+    		transform-origin: 50% 0;    		
+    	}
+    	100%{
+    		transform: rotate(0deg);
+    		transform-origin: 50% 0;
+    		
+    	}
+    }
+	</style>
+	<body>
+		<div class="container">
+			<h1>摇晃的桃子</h1>
+			<div class="all_peach">
+				<span class="peach peach1 shake2"></span>
+				<span class="peach peach2 shake2"></span>
+				<span class="peach peach3 shake3"></span>
+				<span class="peach peach4 shake4"></span>
+				<span class="peach peach5 shake5"></span>
+				<span class="peach peach6 shake6"></span>
+			</div>
+		</div> 
+	</body>
+</html>
