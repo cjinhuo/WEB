@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+
+.wrapper{
+	width: 1000px;
+	height: 250px;
+	position: relative;
+	margin: 100px auto;
+	overflow: hidden;
+	transform:perspective(800px);
+	transform-style: preserve-3d;;
+
+}
+.item{
+	left: 50%;
+	position: absolute;
+	margin-left: -250px;
+	top: 10px;
+	width: 500px;
+	height: 200px;
+	background-color: rgba(61, 169, 169, 0.49);
+	transition: 0.5s cubic-bezier(.25, .46, .33, .98);
+	cursor: pointer;
+	text-align: center;
+}
+.left{
+	transform:perspective(500px) translate3d(-250px,0px,-100px) rotateY(20deg);
+	opacity: 0.8;
+}
+.leftleft{
+	opacity: 0;
+	transform:perspective(500px) translate3d(-500px,0px,-100px) rotateY(20deg);
+	z-index: -1;
+
+}
+.right{
+	transform:perspective(500px) translate3d(250px,0px,-100px) rotateY(-20deg);
+	opacity: 0.8;
+}
+.rightright{
+	opacity: 0;
+	transform:perspective(500px) translate3d(500px,0px,-100px) rotateY(-20deg);
+	z-index: -1;
+}
+.front{
+	transform:perspective(500px) translate3d(0px,0px,0px);
+	z-index: 1;
+}
+.back{
+	display: none;
+	transform:perspective(500px) translate3d(0px,0px,-200px);
+	z-index: -1;
+}
+
+
+</style>
+<body>
+	<div class="wrapper">
+		<div style="background-color: red;" class="item left">1</div>
+		<div style="background-color: blue;"  class="item front">2</div>
+		<div style="background-color: green;" class="item right">3</div>
+		<div style="background-color: orange;" class="item rightright">4</div>
+		<div style="background-color: pink;" class="item back">5</div>
+		<div style="background-color: purple;" class="item back">6</div>
+		<div style="background-color: black;" class="item back">7</div>
+		<div style="background-color: yellow;" class="item leftleft">8</div>
+	</div>
+	<script type="text/javascript">
+		const wrapper = document.querySelector('.wrapper');
+		wrapper.addEventListener('click', e => {
+			const {target} = e;
+			if (target.classList.contains("left")) {
+				target.classList.remove("left");
+				target.classList.add("front");
+				const leftleft = target.previousElementSibling || wrapper.lastElementChild;
+				leftleft.classList.remove("leftleft");
+				leftleft.classList.add("left");
+				const leftback = leftleft.previousElementSibling || wrapper.lastElementChild;
+				leftback.classList.remove("back");
+				leftback.classList.add("leftleft");
+				const front = target.nextElementSibling || wrapper.firstElementChild;
+				front.classList.remove("front");
+				front.classList.add("right");
+				const right = front.nextElementSibling || wrapper.firstElementChild;
+				right.classList.remove("right");
+				right.classList.add("rightright");
+				const rightright = right.nextElementSibling || wrapper.firstElementChild;
+				rightright.classList.remove("rightright")
+				rightright.classList.add("back");
+			}
+			else if (target.classList.contains("right")){
+				target.classList.remove("right");
+				target.classList.add("front");
+				const front = target.previousElementSibling || wrapper.lastElementChild;
+				front.classList.remove("front");
+				front.classList.add("left");
+				const left = front.previousElementSibling || wrapper.lastElementChild;
+				left.classList.remove("left");
+				left.classList.add("leftleft");
+				const leftleft = left.previousElementSibling || wrapper.lastElementChild
+				leftleft.classList.remove("leftleft");
+				leftleft.classList.add("back");
+				const rightright = target.nextElementSibling || wrapper.firstElementChild;
+				rightright.classList.remove("rightright")
+				rightright.classList.add("right");
+				const rightback = rightright.nextElementSibling || wrapper.firstElementChild;
+				rightback.classList.remove("back");
+				rightback.classList.add("rightright");
+			}
+		})
+	</script>
+</body>
+</html>

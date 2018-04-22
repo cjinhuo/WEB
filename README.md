@@ -1,6 +1,10 @@
 ## Summary
 **All Web Test**
 
+* Countdown
+
+![](IllustrateImg/Countdown.gif)
+
 * First_Web
 
 ![](IllustrateImg/first.gif)
@@ -8,6 +12,18 @@
 * Second_Web
 
 ![](IllustrateImg/second.gif)
+
+* SVGLoading
+
+![](IllustrateImg/SVGLoading.gif)
+
+* CSSLoading01
+
+![](IllustrateImg/CSSLoading01.gif)
+
+* CSSLoading02
+
+![](IllustrateImg/CSSLoading02.gif)
 
 * click
 
@@ -17,9 +33,9 @@
 
 ![](IllustrateImg/clock.gif)
 
-* carousel
+* divCarousel
 
-![](IllustrateImg/carousel.gif)
+![](IllustrateImg/divCauousel.gif)
 
 * PersonalInfomation
 
@@ -29,14 +45,15 @@
 
 ![](IllustrateImg/SloshingPeachs.gif)
 
-* Travel 
-
-![](IllustrateImg/Travel.gif)
-
 * RegisterPage
 
 ![](IllustrateImg/Register.gif)
 
+* navFollowScroll
+
+![](IllustrateImg/navScroll.gif)
+
+
 Finally
 -----
-大一大二学习CSS的小作品
+CSS&JS的一些实验

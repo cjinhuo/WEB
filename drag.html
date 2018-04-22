@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    #dragBox {
+        width: 400px;
+        height: 250px;
+        background: deepskyblue;
+        /* 这个是关键,触发BFC，子元素的margin就不会塌陷*/
+        overflow: hidden;
+        position: absolute;
+        /* 强制在页面居中 */
+        top: 50%;
+        left: 50%;
+        /* absolute居中 */
+        /* 宽度的一半 */
+        margin-left: -200px;
+        /* 高度的一半 */
+        margin-top: -125px;
+    }
+    .target {
+        box-sizing: border-box;
+        width: 50%;
+        height: 50px;
+        background-color: deeppink;
+        margin: 10px auto;
+        overflow: hidden;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .target:hover {
+        cursor: pointer;
+    }
+</style>
+
+<body>
+    <div id="dragBox">
+        <div class="target">
+            可拖动区域
+        </div>
+    </div>
+    <script>
+            //找出className相符合的元素集可以指定父级元素的ID，速度会更快点
+            const getByClass = (clsName, parent) => {
+                let oParent = parent ? document.getElementById(parent) : document,
+                    eles = [],
+                    elements = oParent.getElementsByTagName('*');
+    
+                for (let i = 0; i < elements.length; i++) {
+                    if (elements[i].className == clsName) {
+                        eles.push(elements[i]);
+                    }
+                }
+                return eles;
+            }
+    
+            function fnDown(event) {
+                event = event || window.event;
+                let dragBox = document.getElementById('dragBox'),
+                    //计算出盒子和左边框的距离，因为要设置absolute又要让他居中，
+                    //所以我设置了margin所以这边得减掉marginLeft和marginTop
+                    relativeBoxX = event.clientX - dragBox.offsetLeft - dragBox.offsetWidth/2,
+                    relativeBoxY = event.clientY - dragBox.offsetTop - dragBox.offsetHeight/2;
+                document.onmousemove = function (event) {
+                    event = event || window.event;
+                    fnMove(event, relativeBoxX, relativeBoxY);
+                }
+                document.onmouseup = function(){
+                   document.onmousemove = null;
+                   document.onmouseup = null;
+                }
+            }
+    
+            const drag = () => {
+                let onTitle = getByClass('target', 'dragBox')[0];
+                let dragBox = document.getElementById('dragBox');
+                onTitle.onmousedown = fnDown;
+            }
+    
+    
+    
+            const fnMove = (e, Posx, Posy) => {
+                let l = e.clientX - Posx,
+                    t = e.clientY - Posy,
+                    oDrag = document.getElementById('dragBox'),
+                    //窗口的宽度
+                    winW = document.documentElement.clientWidth || documentb.body.clientWidth,
+                    //窗口的高度
+                    winH = document.documentElement.clientHeight || document.body.clientHeight,
+                    //oDrag.offsetWidth是当前div宽度
+                    //oDrag.offsetHeight是当前div高度
+                    maxW = winW - oDrag.offsetWidth,
+                    maxH = winH - oDrag.offsetHeight;
+                    //为了不让div上下左右边框超过屏幕，提高用户体验
+                    
+                //跟上面一样，这边因为div是向右偏移
+                //所以要加上marginLeft和marginTop
+                if (l < 0 + dragBox.offsetWidth/2) {
+                    l = 0 + dragBox.offsetWidth/2;
+                }
+                else if (l > maxW + dragBox.offsetWidth/2) {
+                    l = maxW + dragBox.offsetWidth/2;
+                }
+                if (t < 0 + dragBox.offsetHeight/2) {
+                    t = 0 + dragBox.offsetHeight/2;
+                } else if (t > maxH + dragBox.offsetHeight/2) {
+                    t = maxH + dragBox.offsetHeight/2;
+                }
+                console.log(`left${l}top${t}`);
+                
+                oDrag.style.left = l + 'px';
+                oDrag.style.top = t + 'px';
+            }
+            window.onload = drag;
+        </script>
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<style>
+*{
+	padding: 0;
+	margin:0;
+}
+#count{
+	width: 100px;
+	height: 50px;
+	margin:100px auto;
+	justify-content: space-around;
+	flex-flow: row nowrap;
+	align-items: stretch;
+	overflow: hidden;
+}
+</style>
+<body>
+	<div id="count"></div>
+	<script type="text/javascript">
+	// node:倒计时的父节点，num为倒计时的数
+				function RotateAngle(node,num){
+				this.node = node;
+				this.angle = 360/num;
+				this.startAngle = 0;
+			}
+			RotateAngle.prototype = {
+				constructor:RotateAngle,
+				setIntervalAngle:function(){
+					setInterval(()=>{
+						this.startAngle = this.startAngle - this.angle;
+						this.node.style.transform = `rotateX(${this.startAngle}deg)`;
+					},1000)
+				}
+			}
+		countStyle();
+
+
+
+		
+		function countStyle() {
+			let count = document.getElementById('count');
+			let width = count.offsetWidth;
+			let height = count.offsetHeight;
+			count.style.display = "flex";
+			// 时
+			let hourContainer = document.createElement('div');
+			hourContainer.style.transformStyle = 'preserve-3d';
+			hourContainer.style.flexGrow = 6;
+			hourContainer.style.transition = "0.8s";
+			hourContainer.style.backgroundColor = 'red';
+			count.append(hourContainer);
+			// 插入倒计时
+			hourContainer.append(calculateNumForLiFragment(20,'#ff9a07','white',height));
+			let hourNode = new RotateAngle(hourContainer,20);
+			hourNode.setIntervalAngle();
+
+			// 时和分的间隔
+			let colonOne = document.createElement('div');
+			colonOne.style.flexGrow = 2;
+			colonOne.style.backgroundColor = 'black';
+			count.append(colonOne);
+			// 分
+			let minuteContainer = document.createElement('div');
+			minuteContainer.style.transformStyle = 'preserve-3d';
+			minuteContainer.style.flexGrow = 6;
+			minuteContainer.style.backgroundColor = 'blue';
+			minuteContainer.style.transition = '0.8s';			
+			count.append(minuteContainer);
+			// 插入倒计时
+			minuteContainer.append(calculateNumForLiFragment(30,'#00f09d','white',height));
+			let minuteNode = new RotateAngle(minuteContainer,30);
+			minuteNode.setIntervalAngle();
+			// 分和秒的间隔
+			let colonTwo = document.createElement('div');
+			colonTwo.style.flex = 2;
+			colonTwo.style.backgroundColor = 'black';
+			count.append(colonTwo);
+			// 秒
+			let secondContainer = document.createElement('div');
+			secondContainer.style.transformStyle = 'preserve-3d';
+			secondContainer.style.flexGrow = 6;
+			secondContainer.style.transition = '0.8s';
+			secondContainer.style.backgroundColor = 'green';
+			count.append(secondContainer);
+			// 插入倒计时
+			secondContainer.append(calculateNumForLiFragment(60,'deepskyblue','white',height));
+			let secondNode = new RotateAngle(secondContainer,60);
+			secondNode.setIntervalAngle();
+
+			
+			
+		}
+		// num为倒计时的数，根据num计算角度，bgColor：倒计时的背景颜色，height：是总容器的高度，
+		//没有width，因为width是100%，所以可以不用定义参数
+		function calculateNumForLiFragment(num,bgColor,fontColor,height)
+			{
+				
+				let all = document.createDocumentFragment();
+				let angle = 0;
+				let eachAngle = 360/num;
+				for(let i = 0;i < num;i++){
+				let li = document.createElement('li');
+				li.innerHTML = i;
+				//height按照最外层元素参数的分配
+				li.style.zIndex = '1';
+				li.style.width = "100%";
+				li.style.listStyle = 'none';
+				li.style.backgroundColor = bgColor;
+				li.style.color = fontColor;
+				li.style.position = 'absolute';
+				li.style.textAlign = 'center';
+				li.style.lineHeight = `${height}px`;
+				li.style.fontSize = `${1*height/3}px`;
+				console.log("asd" + height/2/Math.tan(0.017453293*eachAngle/2));
+				// 将角度乘以 0.017453293 (2PI/360)即可转换为弧度
+				li.style.transform = "rotateX(" + angle + "deg)" + "translateZ(" + height/2/Math.tan(0.017453293*eachAngle/2) + "px)";
+				angle = angle - eachAngle;
+				all.appendChild(li);
+				}
+				//fragment				
+				return all;	
+			}
+
+	</script>
+</body>
+</html>

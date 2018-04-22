@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>随着滚动条滚动的Tab切换</title>
+    <style>
+        * {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            font-family: 'Microsoft YaHei';
+
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        li {
+            width: 100px;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+            border-right: 2px solid #eee;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        ul {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav {
+            height: 52px;
+            width: 100%;
+            background: #f5f5f5;
+        }
+
+        .cur {
+            background: #fff;
+            border-top: 2px solid #1a92cf;
+            color: #1a92cf;
+        }
+
+        .fixed {
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        a {
+            color: #505050;
+        }
+
+        #text {
+            margin-top: 52px;
+        }
+
+        #one,
+        #two,
+        #three {
+            float: left;
+            position: relative;
+            top: -52px;
+            visibility: hidden;
+            width: 1px;
+            height: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav fixed" id="nav-container">
+        <ul id="nav-box">
+            <li class="cur">
+                <a href="#one">text1-nav</a>
+            </li>
+            <li>
+                <a href="#two">text2-nav</a>
+            </li>
+            <li>
+                <a href="#three">text3-nav</a>
+            </li>
+        </ul>
+    </div>
+    <div id="text">
+        <!-- 在子元素设置一个浮动元素，定位到top：-52px，因为头部有个固定高度52px，所以 定位不能到顶部 -->
+        <div style="width:100%;height:500px;  background:green;text-align:center;">
+            <div id="one"></div>
+            text1</div>
+        <div style="width:100%;height:500px;background:yellow;text-align:center;">
+            <div id="two"></div>text2</div>
+        <div style="width:100%;height:500px;background:blue;text-align:center;">
+            <div id="three"></div>text3</div>
+    </div>
+
+
+    <script>
+        let navContainer = document.getElementById("nav-container");
+        let navBox = document.getElementById("nav-box");
+        let text = document.getElementById("text");
+        let navBoxChild = navBox.children;
+        let textChild = text.children;
+        window.onscroll = function () {
+            let scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+            //当导航与相应文档接触的时候自动切换
+            for (let i = 0; i < navBoxChild.length; i++) {
+                //如果滚动条加上面的导航栏标签的高度大于下面的div高度的话就把触发cur
+                if (scrollTop + navContainer.offsetHeight >= textChild[i].offsetTop) {
+                    for (let j = 0; j < navBoxChild.length; j++) {
+                        //先清空所有class
+                        navBoxChild[j].className = "";
+                    }
+                    //再给特定的节点添加cur
+                    navBoxChild[i].className = "cur";
+                }
+            }
+        };
+    </script>
+</body>
+
+</html>

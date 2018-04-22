@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .box {
+        width: 100px;
+        height: 100px;
+        background-color: gray;
+        overflow: hidden;
+        position: relative;
+        margin: 100px auto;
+    }
+
+    .effect {
+        width: 280px;
+        height: 280px;
+        border-radius: 50%;
+        background-color: #d2d2d2;
+        transition: 1.5s;
+        transform: scale(0.001);
+    }
+
+    .on {
+        transform: scale(1);
+    }
+
+    #qq {
+        position: absolute;
+        top: 200px;
+        left: 200px;
+        width: 300px;
+        height: 400px;
+        background-color: aquamarine;
+    }
+
+    #ww {
+        position: absolute;
+        top: 50px;
+        left: 100px;
+        width: 100px;
+        height: 50px;
+        background-color: blueviolet;
+    }
+</style>
+
+<body>
+    <div class="box">
+    </div>
+    <span id="shubiao"></span>
+    <div id="qq">
+        <!-- 坐标左上角原点转换 -->
+        <div id="ww">a
+            <div id="aa">b</div>
+        </div>
+    </div>
+    <p id="relativePosition"></p>
+    <script>
+        const box = document.querySelector(".box")
+        const rp = document.querySelector("#relativePosition")
+        box.addEventListener("click", function (e) {
+            var x = e.clientX
+            var y = e.clientY
+            const bb = box.getBoundingClientRect()
+
+            document.getElementById("shubiao").innerHTML = "X=" + x + ",Y=" + y
+            var div = document.createElement("div")
+            div.id = "effect"
+            div.style.position = "absolute"
+            var xx = x - bb.left
+            var yy = y - bb.top
+            var xxx = xx - 140
+            var yyy = yy - 140
+            div.style.top = `${yyy}px`
+            div.style.left = xxx + "px"
+            document.getElementsByClassName("box")[0].appendChild(div)
+            div.classList.add("effect")
+            setTimeout(function () {
+                div.classList.add("on")
+            }, 10)
+            setTimeout(() => {
+                box.removeChild(div)
+            }, 1000)
+        })
+        function creat() {
+            var d = document.getElementsByClassName("box")
+            var div = document.createElement("div")
+            div.id = "effect"
+            var ef = document.getElementById("effect")
+            ef.style.position = "absolute"
+            ef.style.top = x + "px"
+            ef.style.left = y + "px"
+            d.appendChild(div)
+        }
+        const qq = document.querySelector("#qq")
+        const ww = document.querySelector("#ww")
+        qq.addEventListener("click", e => {
+            const rect = qq.getBoundingClientRect()
+            console.log(e.clientX - rect.left, e.clientY - rect.top)
+            rp.innerHTML = `相对当前盒子坐标：${e.clientX - rect.left},${e.clientY - rect.top}`
+        })
+
+
+
+        function aa(q, w) {
+            return q
+        }
+        q => q
+    </script>
+</body>
+
+</html>
