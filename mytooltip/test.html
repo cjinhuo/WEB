@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="myTooltip.css" rel="stylesheet" type="text/css">
+    <title>Document</title>
+</head>
+<style>
+#one{
+    display: block;
+    margin: 100px auto;
+    text-align: center;
+    width: 100px;
+    line-height: 50px;
+    height: 100px;
+    text-align: center;
+    border: 1px solid deepskyblue;
+}
+#two{
+    display: block;
+    margin: 100px auto;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 50px;
+    text-align: center;
+    border: 1px solid deepskyblue;
+}
+</style>
+
+<body>
+    <a id="one" href="www.baidu.com" target="_blank">移到我这,Top提示框</a>
+    <a id="two" href="http://www.cnblogs.com/doudoublog/" target="_blank">移到我这，Left提示框</a>  
+    <script src="myTooltip.js"></script>
+    <script>
+        let one = document.getElementById('one');
+        let two = document.getElementById('two');
+        Tooltip(one, {
+            width: 50,
+            height: 50,
+            placement: 'top',
+            text: `百度链接`
+        })
+        Tooltip(two, {
+            width: 50,
+            height: 50,
+            placement: 'left',
+            text: `个人博客`
+
+        })
+        
+    </script>
+</body>
+
+</html>
