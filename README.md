@@ -61,45 +61,101 @@
 
 ![](IllustrateImg/navScroll.gif)
 
-* scroll + requestAnimationFlame
+* scroll + requestAnimationFlame + 实现 jq fadein fadeout
 
 ```
-function DocumentScroll(scrollValue) {
+// 请求帧动画过渡
+//scrollValue:body scroll过渡滚动 Y轴的距离
+//ele:模仿jq的fadein、fadeout所需的元素
+//frame:每一帧opacity的增加或减少，默认是0.01
+function RequestFrame({ scrollValue, ele, frame }) {
     //页面要滚动到哪个位置 Y轴
-    this.scrollValue = scrollValue;
+    this.scrollValue = scrollValue || 0;
+    this.ele = ele || '';
+    this.frame = frame || 0.01;
+    this.pre = 0;
+    this.requestAnimationFrameScrollHandle = 0;
+    this.requestAnimationFrameFadeinHandle = 0;
+    this.requestAnimationFrameFadeoutHandle = 0;
+    this.requestAnimationFrameScroll = this.requestAnimationFrameScroll.bind(this)
+    this.requestAnimationFrameFadein = this.requestAnimationFrameFadein.bind(this)
+    this.requestAnimationFrameFadeout = this.requestAnimationFrameFadeout.bind(this)
 }
-//用请求帧动画来过渡scroll
-DocumentScroll.prototype = {
-    constructor:DocumentScroll,
-    requestAnimationFrameScroll:(function f() {
-     let s;
+RequestFrame.prototype = {
+    constructor: RequestFrame,
+    // body scroll过渡滚动
+    requestAnimationFrameScroll() {
+        this.startRequestAnimationFrameScroll()
+        let s;
         //兼容模式和未兼容模式
-        if (typeof window.pageYOffset != 'undefined')
-        {
+        if (typeof window.pageYOffset != 'undefined') {
             s = window.pageYOffset;
         }
-        else if (typeof document.compatMode != 'undefined' &&    document.compatMode != 'BackCompat')
-        {
+        else if (typeof document.compatMode != 'undefined' && document.compatMode != 'BackCompat') {
             s = document.documentElement.scrollTop;
         }
-        else if (typeof document.body != 'undefined')
-        {
+        else if (typeof document.body != 'undefined') {
             s = document.body.scrollTop;
         }
         s += 25;
         document.documentElement.scrollTop = s
-        f.cancelID = requestAnimationFrame(f);
-        if(!f.pre){
-            f.pre = 0;
-        }
-        //有可能滚动不到那个位置，有时页面长度太小，所有加个判断，要是一直滚动不到就退出循环
-        if(s > this.scrollValue || document.documentElement.scrollTop === f.pre){
+        console.log(this.scrollValue)
+        if (s > this.scrollValue || document.documentElement.scrollTop === this.pre) {
             console.log('stop')
-            window.cancelAnimationFrame(f.cancelID)
+            this.stopRequestAnimationFrameScroll()
         }
-        f.pre = document.documentElement.scrollTop;
-        //两边都得赋值
-    })
+        this.pre = document.documentElement.scrollTop;
+    },
+    startRequestAnimationFrameScroll() {
+        this.requestAnimationFrameScrollHandle = requestAnimationFrame(this.requestAnimationFrameScroll)
+    },
+    stopRequestAnimationFrameScroll() {
+        cancelAnimationFrame(this.requestAnimationFrameScrollHandle)
+    },
+    // 模仿jq的fadein
+    requestAnimationFrameFadein() {
+        this.startRequestAnimationFrameFadein()
+        if (this.ele.style.opacity === "") {
+            this.ele.style.opacity = 0;
+        }
+        if (this.ele.style.display === "" || this.ele.style.display === 'none') {
+            this.ele.style.display = 'block';
+        }
+
+        if (this.ele.style.opacity < 1) {
+            this.ele.style.opacity = parseFloat(this.ele.style.opacity) + this.frame;
+        } else {
+            this.stopRequestAnimationFrameFadein()
+        }
+    },
+    startRequestAnimationFrameFadein() {
+        this.requestAnimationFrameFadeinHandle = requestAnimationFrame(this.requestAnimationFrameFadein)
+    },
+    stopRequestAnimationFrameFadein() {
+        cancelAnimationFrame(this.requestAnimationFrameFadeinHandle)
+    },
+    //模仿jq的fadeout
+    requestAnimationFrameFadeout(){
+        this.startRequestAnimationFrameFadeout()
+        if (this.ele.style.opacity === "") {
+            this.ele.style.opacity = 1;
+        }
+        if (this.ele.style.display === "" || this.ele.style.display === 'none') {
+            this.ele.style.display = 'block';
+        }
+        if (this.ele.style.opacity > 0) {
+            this.ele.style.opacity = parseFloat(this.ele.style.opacity) - this.frame;
+        }else{
+            this.ele.style.display = 'none'
+            this.stopRequestAnimationFrameFadeout()
+        }
+    },
+    startRequestAnimationFrameFadeout() {
+        this.requestAnimationFrameFadeoutHandle = requestAnimationFrame(this.requestAnimationFrameFadeout)
+    },
+    stopRequestAnimationFrameFadeout() {
+        cancelAnimationFrame(this.requestAnimationFrameFadeoutHandle)
+    }
 }
 ```
 Finally
